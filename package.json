@@ -22,5 +22,17 @@
   "bugs": {
     "url": "https://github.com/Brandenjw/Project2/issues"
   },
-  "homepage": "https://github.com/Brandenjw/Project2#readme"
+  "homepage": "https://github.com/Brandenjw/Project2#readme",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-pgbouncer"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
 }
+
+
+
+
