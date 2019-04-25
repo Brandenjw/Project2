@@ -1,0 +1,26 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "Project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.5.2",
+    "hbs": "^4.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brandenjw/Project2.git"
+  },
+  "author": "Branden J White",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brandenjw/Project2/issues"
+  },
+  "homepage": "https://github.com/Brandenjw/Project2#readme"
+}
