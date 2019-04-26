@@ -28,14 +28,6 @@ app.get('/', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
 //connecting to project 2 work
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
