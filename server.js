@@ -2,7 +2,8 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
-
+const logger = require('morgan')
+const routes = require('./routes/index')
 
 // const userApi = require('./api/userApi.js');
 // const accountApi = require('./api/waysApi.js');
@@ -18,7 +19,8 @@ app.use(methodOverride('_method'))
 
 //linking server to router files
 app.use('/', routes)
-
+//getting extra info in node
+app.use(logger('dev'))
 
 app.get('/', (req, res) => {
     res.render("user")
