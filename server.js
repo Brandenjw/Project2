@@ -1,35 +1,41 @@
 
-const express = require('express');
-const app = express();
-const methodOverride = require('method-override');
+//= =====================
+// REQUIREMENTS
+//= =====================
+// require express, method-override, morgan (logging tool), and our routes
+const express = require('express')
+const app = express()
+const methodOverride = require('method-override')
 const logger = require('morgan')
 const routes = require('./routes/index')
 
-// const userApi = require('./api/userApi.js');
-// const accountApi = require('./api/waysApi.js');
-//sets up hbs
-app.set('view engine', 'hbs');
-app.use(express.static(__dirname + "/public"));
-//setup middleware for handling html forms
-//where body is a query string 
-app.use(express.urlencoded());
 
-
+//= =====================
+// MIDDLEWARE
+//= =====================
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 app.use(methodOverride('_method'))
 
-//linking server to router files
-app.use('/', routes)
-//getting extra info in node
+app.set('view engine', 'hbs')
+
+app.use(express.static(__dirname + '/public'))
+
+// Logger provides extra information in our Node console about each request being made.
 app.use(logger('dev'))
 
-app.get('/', (req, res) => {
-    res.render("user")
-});
+//= =====================
+// Router
+//= =====================
+// Links the server to our Router File
+app.use('/', routes)
 
 
-
-//connecting to project 2 work
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log("");
-});
+//= =====================
+// LISTENERS
+//= =====================
+// CONNECT MONGOOSE TO "Art Class"
+const PORT = process.env.PORT || 3000
+app.listen(PORT,()=>{
+    console.log(`we are now connected to ${PORT}`)
+})
