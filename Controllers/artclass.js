@@ -1,92 +1,79 @@
 
-// require the artclass model
-const Art = require("../models/Donut");
+const user = require("../models/userApi");
 
-const donutController = {
-  //= =====================
-  // INDEX
-  //= =====================
-  // Create a function sends all Donuts to donuts/index.hbs view
-  index: function(req, res) {
-    Donut.find().then(donuts => {
-      res.render("donuts/index", { donuts });
-    });
-  },
-  //= =====================
-  // NEW
-  //= =====================
-  // Create a function that renders the new.hbs form
-  new: function(req, res) {
-    res.render("donuts/new");
-  },
-  //= =====================
-  // SHOW
-  //= =====================
-  // Create a function that renders a single Donut's show page
-  show: function(req, res) {
-    Donut.findById(req.params.id).then(donut => {
-      res.render("donuts/show", { donut });
-    });
-  },
-  //= =====================
-  // CREATE
-  //= =====================
-  // Create a function that creates a new Donut
-  // and upon success redirects back to the index page "/"
-  create: function(req, res) {
-    console.log(req);
-    Donut.create(req.body).then(() => res.redirect("/"));
-  },
-  //= =====================
-  // EDIT
-  //= =====================
-  // Create a function that renders the edit.hbs page and
-  // sends that a Donut's data to it
-  edit: function(req, res) {
-    Donut.findById(req.params.id).then(donut => {
-      res.render("donuts/edit", { donut });
-    });
-  },
-  //= =====================
-  // UPDATE
-  //= =====================
-  // Create a function that updates the Donut and
-  // redirects back to the SHOW PAGE (not index)
-  update: function(req, res) {
-    Donut.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(() => {
-      res.redirect("/" + req.params.id);
-    });
-  },
-  boughtItems: [],
-  buy: function(req, res) {
-    Donut.findById(req.params.id).then(donut => {
-      donut.qty -= 1;
-      Donut.findByIdAndUpdate(req.params.id, donut).then(() => {
-        //this
-        donutController.boughtItems.push(donut)
-        res.redirect("/" + req.params.id);
-      });
-    });
-  },
+const userController = {
+    //= =====================
+    // INDEX
+    //= =====================
+    // Create a function sends all users to users/index.hbs view
+    index: function (req, res) {
+        user.getUsers().then(users => {
+            res.render("users/index", { users });
+        });
+    },
+    //= =====================
+    // NEW
+    //= =====================
+    // Create a function that renders the new.hbs form
+    new: function (req, res) {
+        res.render("users/new");
+    },
+    //= =====================
+    // SHOW
+    //= =====================
+    // Create a function that renders a single Users show page
+    show: function (req, res) {
+        user.findById(req.params.id).then(user => {
+            res.render("users/show", { user });
+        });
+    },
+    //= =====================
+    // CREATE
+    //= =====================
+    // Create a function that creates a new user
+    // and upon success redirects back to the index page "/"
+    create: function (req, res) {
+        console.log(req);
+        user.create(req.body).then(() => res.redirect("/"));
+    },
+    //= =====================
+    // EDIT
+    //= =====================
+    // Create a function that renders the edit.hbs page and
+    // sends that a Users data to it
+    edit: function (req, res) {
+        user.findById(req.params.id).then(user => {
+            res.render("donuts/edit", { donut });
+        });
+    },
+    //= =====================
+    // UPDATE
+    //= =====================
+    // Create a function that updates the User and
+    // redirects back to the SHOW PAGE (not index)
+    update: function (req, res) {
+        user.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(() => {
+            res.redirect("/" + req.params.id);
+        })
+    }
+    
+ 
 
-  cart: function(req, res) {
-    console.log(donutController.boughtItems);
-    res.render("donuts/cart", {boughtItems:donutController.boughtItems});
-  },
-  //= =====================
-  // DELETE
-  //= =====================
-  // Create a function that deletes the Donut and
-  // redirects back to index page "/"
-  delete: function(req, res) {
-    Donut.findByIdAndRemove(req.params.id).then(() => {
-      res.redirect("/");
-    });
-  }
-};
+  
+//= =====================
+// DELETE
+//= =====================
+// Create a function that deletes the User and
+// redirects back to index page "/"
+//     delete: function (req, res) {
+//     user.findByIdAndRemove(req.params.id).then(() => {
+//         res.redirect("/");
+//     });
+}
+
 
 //= =====================
 // EXPORTS
 //= =====================
 // export the controller with module.exports
-module.exports = donutController;
+module.exports = userController;

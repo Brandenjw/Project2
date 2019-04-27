@@ -6,8 +6,8 @@
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
-const logger = require('morgan')
-const routes = require('./routes/index')
+// const logger = require('morgan')
+const routes = require('./routes/user')
 
 
 //= =====================
@@ -21,17 +21,18 @@ app.set('view engine', 'hbs')
 
 app.use(express.static(__dirname + '/public'))
 
-// Logger provides extra information in our Node console about each request being made.
-app.use(logger('dev'))
+
 
 
 //global variable to store list of accounts
 let users = [
-    { name: " ",
+    { name: "username",
+      email: "123abc@gmail.com"
 
     }
   ];
 
+  app.use("/users", routes)
 //= =====================
 // Router
 //= =====================
