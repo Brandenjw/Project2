@@ -1,0 +1,25 @@
+#body{
+    background-color: navy;
+}
+
+#landingIntro{
+    font-size: 24px;
+    text-align: center;
+    border: solid black;
+}
+
+
+#intropic{
+
+    width: 300px;
+    height: 25px;
+}
+#main1{
+    background-color: aqua;
+}
+#usercreate{
+    text-align: center;
+}
+#form1{
+    text-align: center;
+}
