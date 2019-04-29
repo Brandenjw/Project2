@@ -7,7 +7,7 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 // const logger = require('morgan')
-const routes = require('./Routes/users')
+const routes = require('./Routes/')
 
 
 //= =====================
@@ -18,7 +18,8 @@ app.use(express.json())
 app.use(methodOverride('_method'))
 app.set('view engine', 'hbs')
 app.use(express.static(__dirname + '/public'))
-app.use("/users", routes)
+
+app.use("/", routes)
 // app.use(
 
 

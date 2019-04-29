@@ -1,1 +1,1 @@
-const user = require("../models/userApi");
+const user = require("../models/appointmentApi");

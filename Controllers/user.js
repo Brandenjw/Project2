@@ -8,7 +8,7 @@ const userController = {
     // Create a function sends all users to users/index.hbs view
     index: function (req, res) {
         user.getUsers().then(users => {
-            res.render("index", { users });
+            res.render("user/index", { users });
         });
     },
     //= =====================
@@ -16,7 +16,7 @@ const userController = {
     //= =====================
     // Create a function that renders the new.hbs form
     new: function (req, res) {
-        res.render("users/new");
+        res.render("user/new");
     },
     //= =====================
     // SHOW
@@ -28,14 +28,18 @@ const userController = {
         });
     },
     //= =====================
-    // CREATE
+    // CREAT
     //= =====================
     // Create a function that creates a new user
     // and upon success redirects back to the index page "/"
     create: function (req, res) {
         console.log(req);
-        user.create(req.body).then(() => res.redirect("/"));
+        User.create(req.body).then(() => res.redirect("/"));
     },
+
+
+
+
     //= =====================
     // EDIT
     //= =====================

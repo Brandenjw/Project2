@@ -1,27 +1,25 @@
-const mongoose = require('../Api/DB/connection');
+const mongoose = require('../DB/connection');
 
-//input functions for page
-
-// require the user model
 
 
 //create the schema of the entity we want to use
 let userSchema = mongoose.Schema({
     //object that defines the type of values for each key
-    name: String,
+    firstname: String,
+    lastname: String,
     email: String,
-    
-  });
-
+    });
+ 
   const userCollection = mongoose.model("User", userSchema);
-   function createUser (){
+   
+  function createUser (){
    return userCollection.create({
       name: " ",
       createDate:new Date()
     });
 }
     function getUserAtId(users, id) {
-      
+      return userCollection.find();
     }
     
     function getUsers() {

@@ -1,0 +1,39 @@
+#body{
+    background-color: navy;
+}
+
+#landingIntro{
+    font-size: 24px;
+    text-align: center;
+    
+}
+#smallIntro{
+    font-size: 24px;
+    text-align: center;
+    
+}
+
+
+#intropic{
+
+    width: 300px;
+    height: 25px;
+}
+#main1{
+    background-color: aqua;
+}
+#usercreate{
+    text-align: center;
+}
+#form1{
+    text-align: center;
+}
+#graff1{
+    background-image: url("/images/graff1.jpg");
+    height: 100vh;
+    width: 100vw;
+
+}
+#landing{
+    background-color: black;
+}
