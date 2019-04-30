@@ -10,6 +10,9 @@ let userSchema = mongoose.Schema({
     firstname: String,
     lastname: String,
     email: String,
+    month: String,
+    date: Number,
+
     });
  
     module.exports = mongoose.model("User", userSchema);
