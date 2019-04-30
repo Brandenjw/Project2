@@ -4,11 +4,14 @@ const userController = require('../Controllers/user.js')
 
 
 router.get("/", (req, res) => {
-
   res.render("landing")
 })
 
-router.get("/new", userController.new)
+router.get("/new", userController.new);
+
+router.get("/user/:uid", userController.show)
+
+
 
 
 //Sends back a single page with the details of a single account displayed
@@ -37,7 +40,7 @@ router.get("/new", userController.new)
   //requests). Make sure the HTML Form has the pattern: action='.../put' 
   // router.delete("/users/:id/delete", (req, res) => { 
   // });
-  
+  router.delete("/user/:uid", userController.delete)
 
 
 module.exports = router

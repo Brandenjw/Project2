@@ -1,5 +1,5 @@
 
-const user = require("../models/userApi");
+const User = require("../Models/userApi");
 
 const userController = {
     //= =====================
@@ -23,8 +23,9 @@ const userController = {
     //= =====================
     // Create a function that renders a single Users show page
     show: function (req, res) {
-        user.findById(req.params.id).then(user => {
-            res.render("users/show", { user });
+        User.findById(req.params.uid).then(user => {
+            console.log(user)
+            res.render("user/show", { user });
         });
     },
     //= =====================
@@ -34,8 +35,11 @@ const userController = {
     // and upon success redirects back to the index page "/"
     create: function (req, res) {
         console.log(req);
-        User.create(req.body).then(() => res.redirect("/"));
-    },
+        User.create(req.body)
+        .then(user => {
+            res.redirect("/user/" + user._id);
+    })}
+    ,
 
 
 
