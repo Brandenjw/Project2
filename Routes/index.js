@@ -34,13 +34,13 @@ router.get("/user/:uid", userController.show)
   //requests). Make sure the HTML Form has the pattern: action='.../put' 
   // router.put("users/:id/put", (req, res) => {
   // });
-  
+  router.put("/user/:id", userController.update)
   //accounts DELETE (note here you'll need to put /delete at the end of your
   //path. This is a work around because HTML forms only allow GET and POST
   //requests). Make sure the HTML Form has the pattern: action='.../put' 
   // router.delete("/users/:id/delete", (req, res) => { 
   // });
-  router.delete("/user/:uid", userController.delete)
+  router.delete("/", userController.delete)
 
 
 module.exports = router

@@ -44,24 +44,15 @@ const userController = {
 
 
 
-    //= =====================
-    // EDIT
-    //= =====================
-    // Create a function that renders the edit.hbs page and
-    // sends that a Users data to it
-    edit: function (req, res) {
-        user.findById(req.params.id).then(user => {
-            res.render("donuts/edit", { donut });
-        });
-    },
+   
     //= =====================
     // UPDATE
     //= =====================
     // Create a function that updates the User and
     // redirects back to the SHOW PAGE (not index)
     update: function (req, res) {
-        user.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(() => {
-            res.redirect("/" + req.params.id);
+        User.findByIdAndUpdate(req.params.id, req.body).then(() => {
+            res.redirect(`/user/${req.params.id}`);
         });
     },
     
@@ -74,7 +65,8 @@ const userController = {
 //  Create a function that deletes the User and
 //  redirects back to index page "/"
      delete: function (req, res) {
-     user.findByIdAndRemove(req.params.id).then(() => {
+         console.log(req)
+     user.findByIdAndDelete(req.params.id).then(() => {
          res.redirect("/");
     });
 },

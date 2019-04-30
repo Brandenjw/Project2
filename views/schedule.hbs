@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<h1>{{user.name}}</h1>
-<form action="../Controllers/schedule.js">
+
+<body id="schedule">
+<h1>{{user.name}}</h1><br>
+<h1>Painting Class Appointment</h1>
+<form action="./user/{{user._id}}?_method=put" method="PUT">
 <input type="month" name="Month"><br>
 <input type="week"  name="Week"><br>
 <input type="date"  name="Date"><br>
 <input type="submit" value="Submit">
 </form>
 
-{{body}}
     
 </body>
-</html>
+
