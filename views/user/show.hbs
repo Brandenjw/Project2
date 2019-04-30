@@ -2,7 +2,13 @@
 
 
 {{user.username}}
-
+ <a href="/views/landing.hbs">Home</a>
+ <a href="./new.hbs">Edit</a>
+ <a href="/views/gallery.hbs">Gallery</a>
+ <a href="/views/schedule.hbs">Appointment</a>
+   <form action="./show{{user.id}}?_method=delete" method="POST">
+                    <input type="submit" value="Delete Ailment" class="button">
+                </form>
 
 
 
