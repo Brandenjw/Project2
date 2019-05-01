@@ -6,8 +6,10 @@ const scheduleController = {
     //= =====================
     // Create a function sends all users to /schedule view
     index: function (req, res) {
-        Appt.getUsers().then(user => {
-            res.render("schedule/index", { user });
+        Appt.find().then(time => {(time)
+            console.log("TESSSSSSSTTTTT")
+            console.log(time)
+            res.render("schedule", {time });
         });
     },
     //= =====================
@@ -35,8 +37,8 @@ const scheduleController = {
     create: function (req, res) {
         console.log(req);
         Appt.create(req.body)
-        .then(user => {
-            res.redirect(`/user/"${user._id}`);
+        .then(() => {
+            res.redirect(`/`);
     })}
     ,
 

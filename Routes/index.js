@@ -16,9 +16,9 @@ router.delete("/", userController.delete)
 
 
 
-router.get("/schedule", scheduleController.new);
+router.get("/schedule", scheduleController.index);
 router.post("/schedule", scheduleController.create)
-// router.put("/schedule/:dateParam", scheduleController.update)
+router.put("/schedule/:sId", scheduleController.update)
 router.delete("schedule", scheduleController.delete)
 
 

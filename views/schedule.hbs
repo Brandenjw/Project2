@@ -1,10 +1,26 @@
 <div id="schedule">
     <h4 id="label">{{user.username}}</h4><br>
+   
+{{#each time}}
+
+
+{{date}}
+  <form action="/schedule{{_id}}method=delete" method="DELETE">
+    <input type="submit"  value="Delete Appt" class="button">
+    
+  </form>
+{{_id}}
+
+
+
+{{/each}}
+
+
     <h1>Painting Class Appointment</h1>
 
 
-    <form action="/schedule/"`${Date}` method="POST">
-        <input type="date" name="Date"><br>
+    <form action="/schedule" method="POST">
+        <input type="date" name="date"><br>
         <input type="submit" value="Submit">
     </form>
 
@@ -20,7 +36,7 @@
 
     </form>
     <form action="/new?_method=delete" method="DELETE">
-    <input type="submit" value="Delete Appt" class="button">
+    <input type="submit"  value="Restart" class="button">
     
   </form>
 
