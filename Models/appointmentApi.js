@@ -5,7 +5,7 @@ let scheduleSchema = mongoose.Schema({
     //object that defines the type of values for each key
     username: String,
     month: String,
-    date: Number,
+    date: Date,
 
     });
  

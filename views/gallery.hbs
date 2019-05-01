@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <form action="../Controllers/gallery.js">
-    <input type="image" name="Flex Zone" id="pics"><br>
+    {{user.username}}<br>
+    {{user.firstname}}<br>
+    {{user.lastname}}<br>
+    {{user.email}}
+    <br>
+
+    <form id="galform">
+        <input type="file" name="image">
+        <input type="text" name="username">
+        <input type="submit" value="Add Image" class="button">
     </form>
-    
+
 </body>
+
 </html>

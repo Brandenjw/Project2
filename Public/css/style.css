@@ -1,5 +1,5 @@
 #body{
-    background-color: navy;
+    /* background-color: navy; */
 }
 
 #landingIntro{
@@ -36,4 +36,8 @@
 }
 #landing{
     background-color: black;
+}
+#label{
+    border:solid black;
+    
 }

@@ -4,16 +4,16 @@ const scheduleController = {
     //= =====================
     // INDEX
     //= =====================
-    // Create a function sends all users to users/index.hbs view
+    // Create a function sends all users to /schedule view
     index: function (req, res) {
-        Appt.getUsers().then(users => {
-            res.render("user/index", { users });
+        Appt.getUsers().then(user => {
+            res.render("schedule/index", { user });
         });
     },
     //= =====================
     // NEW
     //= =====================
-    // Create a function that renders the new.hbs form
+    // Create a function that renders the schedule.hbs form
     new: function (req, res) {
         res.render("schedule");
     },
@@ -24,19 +24,19 @@ const scheduleController = {
     show: function (req, res) {
         Appt.findById(req.params.uid).then(user => {
             console.log(user)
-            res.render("user/show", { user });
+            res.render("/user/show", { user });
         });
     },
     //= =====================
-    // CREAT
+    // CREATE
     //= =====================
-    // Create a function that creates a new user
+    // Create a function that creates a new schedule
     // and upon success redirects back to the index page "/"
     create: function (req, res) {
         console.log(req);
         Appt.create(req.body)
         .then(user => {
-            res.redirect("/user/" + user._id);
+            res.redirect(`/user/"${user._id}`);
     })}
     ,
 
@@ -50,7 +50,8 @@ const scheduleController = {
     // Create a function that updates the User and
     // redirects back to the SHOW PAGE (not index)
     update: function (req, res) {
-        Appt.findByIdAndUpdate(req.params.id, req.body).then(() => {
+        Appt.findByIdAndUpdate(req.params.uid, req.body)
+        .then(() => {
             res.redirect(`/user/${req.params.id}`);
         });
     },

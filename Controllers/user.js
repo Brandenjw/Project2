@@ -1,4 +1,3 @@
-
 const User = require("../Models/userApi");
 
 const userController = {
