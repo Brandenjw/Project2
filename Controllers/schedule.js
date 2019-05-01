@@ -38,7 +38,7 @@ const scheduleController = {
         console.log(req);
         Appt.create(req.body)
         .then(() => {
-            res.redirect(`/`);
+            res.redirect("schedule");
     })}
     ,
 
