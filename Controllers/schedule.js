@@ -66,13 +66,18 @@ const scheduleController = {
 //= =====================
 //  Create a function that deletes the User and
 //  redirects back to index page "/"
-     delete: function (req, res) {
-         console.log(req)
-         Appt.findByIdAndDelete(req.params.id).then(() => {
-         res.redirect("/");
-    });
-},
-}
+    //  delete: function (req, res) {
+    //      console.log(req)
+    //      Appt.find{{_id}}.then(() => {
+    //      res.redirect("/");
+         delete: function(req,res) {
+            Appt.findByIdAndRemove(req.params.sId).then(()=>{
+              res.redirect('/schedule/')
+            })
+          }
+//     })
+ }
+
 
 
 //= =====================
