@@ -7,11 +7,13 @@
 {{date}}
   <form action="/schedule/{{_id}}?_method=DELETE" method="POST">
     <input type="submit"  value="Delete Appt" class="button">
-    
-  </form>
+    </form>
+
 {{_id}}
 
-
+    <form action="/schedule2/{{_id}}" method="get">
+    <input type="submit" value="Update" class="button">
+    </form>
 
 {{/each}}
 

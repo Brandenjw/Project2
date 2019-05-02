@@ -19,7 +19,8 @@ router.delete("/", userController.delete)
 
 router.get("/schedule", scheduleController.index);
 router.post("/schedule", scheduleController.create)
-router.put("/schedule/:sId", scheduleController.update)
+router.put("/schedule2/:id", scheduleController.showUpdate)
+router.get("/schedule2/:id", scheduleController.showUpdate)
 router.delete("/schedule/:sId", scheduleController.delete)
 
 router.get("/gallery", galleryController.index);

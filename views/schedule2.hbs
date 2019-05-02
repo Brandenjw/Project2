@@ -1,0 +1,15 @@
+<div id="dive">
+    <h1>Painting Class Appointment</h1>
+<h1>{{user.date}} update!</h1>
+{{user._id}}
+    <form action="/schedule2/{{user._id}}?_method=PUT" method="POST">
+        <input type="date" name="date"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <div id="wow">
+    <a href="/">Home</a><br>
+    <a href="/user">User Page</a><br>
+    <a href="/gallery">gallery</a>
+  </div>
+</div>

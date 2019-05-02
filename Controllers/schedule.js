@@ -29,6 +29,13 @@ const scheduleController = {
             res.render("/user/show", { user });
         });
     },
+
+    showUpdate: function (req, res) {
+        Appt.findById(req.params.id).then(user => {
+            console.log(user)
+            res.render("schedule2", { user });
+        });
+    },
     //= =====================
     // CREATE
     //= =====================
@@ -51,11 +58,26 @@ const scheduleController = {
     //= =====================
     // Create a function that updates the User and
     // redirects back to the SHOW PAGE (not index)
+    // update: function (req, res) {
+    //     Appt.findByIdAndUpdate(req.params.id, req.body)
+    //     .then(() => {
+    //         res.render("schedule");
+    //     });
+    // },
+
     update: function (req, res) {
-        Appt.findByIdAndUpdate(req.params.uid, req.body)
-        .then(() => {
-            res.redirect(`/user/${req.params.id}`);
-        });
+        Appt.findByIdAndUpdate(req.params.id)
+        .then(user => {
+            let update ={
+                username: req.body.username,
+                month: req.body.month,
+                date: req.body.date
+            }
+            Appt.updateOne(user,update)
+            .then(() => {
+                res.render("schedule");
+            })
+        })
     },
     
  
