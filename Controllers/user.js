@@ -28,7 +28,7 @@ const userController = {
         });
     },
     //= =====================
-    // CREAT
+    // CREATE
     //= =====================
     // Create a function that creates a new user
     // and upon success redirects back to the index page "/"

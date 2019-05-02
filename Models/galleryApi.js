@@ -8,8 +8,9 @@ let gallerySchema = mongoose.Schema({
     firstname: String,
     lastname: String,
     email: String,
-    image: File
-
+    image: Object,
+    comment: String,
+    graffitiname: String
     });
  
     module.exports = mongoose.model("Gallery", gallerySchema);

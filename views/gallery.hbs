@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
 
-<body>
-    {{user.username}}<br>
+
+<body id="gal">
+    {{user.graffitiname}}<br>
     {{user.firstname}}<br>
     {{user.lastname}}<br>
     {{user.email}}
     <br>
+    <div id="commentpic"></div>
+{{!-- 
+    <form action="/gallery/{{_id}}?_method=put" method="POST" id="galform">
+        <input type="text" name="comment">
+        <input type="submit" value="Submit Comment" class="button">
+    </form>
+    <br><br> --}}
 
-    <form id="galform">
-        <input type="file" name="image">
-        <input type="text" name="username">
-        <input type="submit" value="Add Image" class="button">
+{{!-- <form action="/gallery" method="POST" id="galform">
+<div>
+<textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+Hey... say something!
+</textarea>
+</div>
+<input type="submit" value="Submit">
+</form> --}}
+
+<form id="form1"  action="/gallery" method="POST">
+        graffiti name:<input type="text" name="graffitiname">
+         <input type="submit" value="Throw it up">
     </form>
 
-</body>
 
-</html>
+</body>

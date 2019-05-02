@@ -35,7 +35,7 @@ const scheduleController = {
     // Create a function that creates a new schedule
     // and upon success redirects back to the index page "/"
     create: function (req, res) {
-        console.log(req);
+        console.log(req.body);
         Appt.create(req.body)
         .then(() => {
             res.redirect("schedule");
