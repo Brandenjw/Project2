@@ -1,6 +1,6 @@
 <div id="show">
 
-
+<div id="direct">
   <a href="/">Home</a>
   <a href="/gallery">Gallery</a>
   <a href="/schedule">Make Appointment</a>
@@ -11,8 +11,12 @@
     Last name: <input type="text" name="lastname"><br>
     email: <input type="email" name="email"><br>
     <input type="submit" value="Update User" class="button">
+  <form action="/?_method=delete" method="DELETE">
+    <input type="submit" value="Delete User" class="button">
+    </form>
 
   </form>
+  </div>
 
   <br><br>
   {{user.username}}<br>
@@ -20,10 +24,6 @@
   {{user.lastname}}<br>
   {{user.email}}
   <br><br>
-  <form action="/?_method=delete" method="DELETE">
-    <input type="submit" value="Delete User" class="button">
-    
-  </form>
 
 
 </div>
